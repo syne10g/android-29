@@ -9,6 +9,10 @@ ENV PATH "${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools/bin:${AND
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ADD android-wait-for-emulator.sh /opt
+
+RUN mkdir /opt/android
+
 # Install required tools
 # Dependencies to execute Android builds
 
@@ -26,6 +30,8 @@ RUN dpkg --add-architecture i386 && apt-get update -yqq && apt-get install -y \
   unzip \
   vim \
   && apt-get clean
+
+RUN chmod a+x /opt/tools/android-wait-for-emulator.sh
 
 RUN groupadd android && useradd -d /opt/android-sdk-linux -g android android
 
