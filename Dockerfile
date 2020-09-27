@@ -47,4 +47,6 @@ RUN /opt/android-sdk-linux/tools/bin/sdkmanager "emulator"
 
 RUN /opt/android-sdk-linux/tools/bin/sdkmanager "system-images;android-29;google_apis;x86_64"
 
+RUN echo "no" | avdmanager create avd -n first_avd --abi google_apis/x86_64 -k "system-images;android-29;google_apis;x86_64"
+
 CMD /opt/tools/entrypoint.sh built-in
