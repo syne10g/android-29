@@ -53,6 +53,8 @@ RUN /opt/android-sdk-linux/tools/bin/sdkmanager "emulator"
 
 RUN /opt/android-sdk-linux/tools/bin/sdkmanager "system-images;android-28;google_apis;x86_64"
 
+RUN echo "y" | /opt/android-sdk-linux/tools/bin/sdkmanager --update \
+
 RUN echo "no" | avdmanager create avd -n first_avd --abi google_apis/x86_64 -k "system-images;android-28;google_apis;x86_64"
 
 RUN echo "no" | avdmanager create avd -n second_avd --abi google_apis/x86_64 -k "system-images;android-28;google_apis;x86_64"
