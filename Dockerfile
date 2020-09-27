@@ -51,7 +51,7 @@ RUN /opt/android-sdk-linux/tools/bin/sdkmanager "platform-tools"
 
 RUN /opt/android-sdk-linux/tools/bin/sdkmanager "emulator"
 
-RUN sdkmanager --install "system-images;android-28;google_apis;x86"
+RUN /opt/android-sdk-linux/tools/bin/sdkmanager "system-images;android-28;default;x86"
 
 RUN echo "y" | /opt/android-sdk-linux/tools/bin/sdkmanager --update
 
