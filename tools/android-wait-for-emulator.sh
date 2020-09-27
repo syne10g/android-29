@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "Starting first_avd emulator"
+
+$ANDROID_HOME/emulator/emulator @first_avd -no-window -no-audio 2>&1 &
+
 set +e
 
 bootcomplete=""
