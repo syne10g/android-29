@@ -55,8 +55,8 @@ RUN /opt/android-sdk-linux/tools/bin/sdkmanager "system-images;android-28;defaul
 
 RUN echo "y" | /opt/android-sdk-linux/tools/bin/sdkmanager --update
 
-RUN echo "no" | avdmanager create avd -n first_avd --abi google_apis/x86 -k "system-images;android-28;default;x86"
+RUN echo "no" | avdmanager create avd -n first_avd --abi default/x86 -k "system-images;android-28;default;x86"
 
-RUN echo "no" | avdmanager create avd -n second_avd --abi google_apis/x86 -k "system-images;android-28;default;x86"
+RUN echo "no" | avdmanager create avd -n second_avd --abi default/x86 -k "system-images;android-28;default;x86"
 
 CMD /opt/tools/entrypoint.sh built-in
