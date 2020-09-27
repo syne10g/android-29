@@ -45,13 +45,13 @@ RUN /opt/tools/entrypoint.sh built-in
 
 RUN /opt/android-sdk-linux/tools/bin/sdkmanager "build-tools;29.0.3"
 
-RUN /opt/android-sdk-linux/tools/bin/sdkmanager "platforms;android-29"
+RUN /opt/android-sdk-linux/tools/bin/sdkmanager "platforms;android-28"
 
 RUN /opt/android-sdk-linux/tools/bin/sdkmanager "platform-tools"
 
 RUN /opt/android-sdk-linux/tools/bin/sdkmanager "emulator"
 
-RUN /opt/android-sdk-linux/tools/bin/sdkmanager "system-images;android-29;google_apis;x86_64"
+RUN /opt/android-sdk-linux/tools/bin/sdkmanager "system-images;android-28;google_apis;x86_64"
 
 RUN echo "no" | avdmanager create avd -n first_avd --abi google_apis/x86_64 -k "system-images;android-28;google_apis;x86_64"
 
