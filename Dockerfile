@@ -29,6 +29,7 @@ RUN dpkg --add-architecture i386 && apt-get update -yqq && apt-get install -y \
   wget \
   unzip \
   vim \
+  kvm \
   && apt-get clean
 
 RUN chmod a+x /opt/android-wait-for-emulator.sh
