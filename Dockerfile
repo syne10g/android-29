@@ -29,7 +29,6 @@ RUN dpkg --add-architecture i386 && apt-get update -yqq && apt-get install -y \
   wget \
   unzip \
   vim \
-  kvm \
   && apt-get clean
 
 RUN chmod a+x /opt/android-wait-for-emulator.sh
@@ -56,8 +55,8 @@ RUN /opt/android-sdk-linux/tools/bin/sdkmanager "system-images;android-28;google
 
 RUN echo "y" | /opt/android-sdk-linux/tools/bin/sdkmanager --update
 
-RUN echo "no" | avdmanager create avd -n first_avd -c 1024M --abi google_apis/x86_64 -k "system-images;android-28;google_apis;x86_64"
+RUN echo "no" | avdmanager create avd -n first_avd --abi google_apis/x86_64 -k "system-images;android-28;google_apis;x86_64" -d 17
 
-RUN echo "no" | avdmanager create avd -n second_avd -c 1024M --abi google_apis/x86_64 -k "system-images;android-28;google_apis;x86_64"
+RUN echo "no" | avdmanager create avd -n second_avd --abi google_apis/x86_64 -k "system-images;android-28;google_apis;x86_64" -d 17
 
 CMD /opt/tools/entrypoint.sh built-in
