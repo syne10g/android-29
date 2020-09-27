@@ -9,7 +9,7 @@ ENV PATH "${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools/bin:${AND
 
 ENV DEBIAN_FRONTEND noninteractive
 
-ADD android-wait-for-emulator.sh /opt
+ADD android-wait-for-emulator.sh /opt/tools
 
 RUN mkdir /opt/android
 
